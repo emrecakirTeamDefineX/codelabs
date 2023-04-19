@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/resources/favicon_dfx.ico">
-  <link rel="stylesheet" href="/resources/index.css">
+  <link rel="icon" type="image/x-icon" href="/favicon_dfx.ico">
+  <link rel="stylesheet" href="/resources/styles.css">
   <link src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css"></link>
       <script>
         function load(url, element)
@@ -14,8 +14,8 @@
                     .then(text=> element.innerHTML = text);
             }
         document.addEventListener("DOMContentLoaded", () => {
-            load("./layout-elements/header.html", document.querySelector('.header'));
-            load("/steps/step0.html", document.querySelector('.card-body'));
+            load("./_layouts/header.html", document.querySelector('.header'));
+            load("/_includes/step0.html", document.querySelector('.card-body'));
         });
       </script>
 </head>
@@ -53,7 +53,7 @@
     <script>
         function render(page,min){
             document.querySelector(".mins").innerHTML = min;
-            load("./steps/"+page+".html", document.querySelector('.card-body'));
+            load("./_includes/"+page+".html", document.querySelector('.card-body'));
         }
     </script>
 

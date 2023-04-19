@@ -10,6 +10,10 @@ body {
     color: #282a32;
 }
 
+.mins{
+  font-size: small;
+}
+
 img {
     display: block;
     max-width: 100%;
