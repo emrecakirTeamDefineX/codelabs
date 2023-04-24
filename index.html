@@ -30,7 +30,7 @@
                             </div>
                             <div class="card-body"></div>
                             <div class="card-footer">
-                                <a href="#"><b>Next page</b></a>
+                                <a><b onclick="nextPage()"></b></a>
                             </div>
                         </article>
                     </div>
@@ -39,20 +39,25 @@
         </div>
     </main>
     <script>
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve("done!"), 500)
+        });
         function load(url, element)
             {
                 fetch(url)
                     .then(response=> response.text())
                     .then(text=> element.innerHTML = text);
             }
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", async () => {
+            await promise 
             load("./_layouts/header.html", document.querySelector('.header'));
             load("/_includes/step0.html", document.querySelector('.card-body'));
         });
-        function render(page,min){
+        function render(page,min,e){
             document.querySelector(".mins").innerHTML = min;
             load("./_includes/"+page+".html", document.querySelector('.card-body'));
         }
+        
     </script>
 
 </body>
